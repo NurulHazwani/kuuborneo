@@ -101,7 +101,7 @@ body {
 
 /* IMPORTANT FIX: remove mismatch */
 .carousel-inner {
-    height: 400px;
+    height: auto;
     overflow: hidden;
 }
 
