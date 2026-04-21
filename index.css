@@ -1,12 +1,24 @@
+/*----------------------------------------GLOBAL---------------------------------------------*/
 body {
     margin: 0;
+    background-color: #201ec9;
     font-family: Arial, sans-serif;
 }
 
-/* HEADER CONTAINER */
+/*----------------------------------------CONTAINER---------------------------------------------*/
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgb(28, 25, 195);
+}
+
+/*----------------------------------------HEADER---------------------------------------------*/
+
 .header {
     display: flex;
-    align-items: center;
+    align-items: stretch;   /* IMPORTANT: makes both sides equal height */
     height: 105px;
 }
 
@@ -18,16 +30,16 @@ body {
     padding: 0 25px;
     color: white;
     width: 30%;
-    height:105%;
+    height: 100%;   /* FIXED (was 105%) */
 }
 
 .logo {
     width: 100px;
-    height: 100px;
+    height: auto;
     margin-right: 15px;
     margin-left: 50px;
-    padding-top: 25px;
-    padding-bottom: 20px;
+    padding: 0;   /* removed padding causing misalignment */
+    object-fit: contain;
 }
 
 .title {
@@ -44,7 +56,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
-    height:105%;
+    height: 100%;   /* FIXED (was 105%) */
     color: white;
 }
 
@@ -77,4 +89,30 @@ body {
 .search {
     font-size: 18px;
     cursor: pointer;
+}
+
+/*----------------------------------------CAROUSEL---------------------------------------------*/
+
+/* FIX: Make carousel align perfectly with container */
+.carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* IMPORTANT FIX: remove mismatch */
+.carousel-inner {
+    height: 400px;
+    overflow: hidden;
+}
+
+/* Bootstrap requires this for proper full height behavior */
+.carousel-item {
+    height: 100%;
+}
+
+/* Image fills properly */
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
